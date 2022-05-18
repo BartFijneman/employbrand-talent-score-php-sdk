@@ -2,12 +2,13 @@
 
 Connect your app to the Employbrand Talent Score application with the easy-to-use PHP SDK. When instantiating the EmploybrandTS class, you must provide the company ID and company access token. You can get these credentials form in the Employbrand Hub under 'Advanced > Employbrand API > Talent Score'.  
 
-##Installation
+## Installation
 ```bash
 composer require webbedrijf/employbrand-talent-score-php-sdk
 ```
 
-##Usage
+## Usage
 ```php
 $employbrandTS = new EmploybrandTS($companyId, $accessToken);
+$employbrandTS->...
 ```
