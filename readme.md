@@ -4,7 +4,7 @@ Connect your app to the Employbrand Talent Score application with the easy-to-us
 
 ## Installation
 ```bash
-composer require webbedrijf/employbrand-talent-score-php-sdk
+composer require employbrand/talent-score-php-sdk
 ```
 
 ## Usage
