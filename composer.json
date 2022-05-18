@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "EmploybrandTS\\": "app/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "7.3",
+    "ext-json": "*",
+    "php": "^8"
+  }
+}
