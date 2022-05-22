@@ -12,3 +12,6 @@ composer require employbrand/talent-score-php-sdk
 $employbrandTS = new EmploybrandTS($companyId, $accessToken);
 $employbrandTS->...
 ```
+
+## Documentation
+This SDK is build based on the documentation publicly available at https://documentation.talent-score.employbrand.app/.

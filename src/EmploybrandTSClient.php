@@ -2,19 +2,19 @@
 
 namespace EmploybrandTS;
 
+use EmploybrandTS\Api\RespondentField;
 use EmploybrandTS\Exceptions\Http\InternalServerError;
 use EmploybrandTS\Exceptions\Http\NotFound;
 use EmploybrandTS\Exceptions\Http\NotValid;
 use EmploybrandTS\Exceptions\Http\PerformingMaintenance;
 use EmploybrandTS\Exceptions\Http\TooManyAttempts;
 use EmploybrandTS\Exceptions\Http\Unauthenticated;
-use EmploybrandTS\Http\Response;
-use EmploybrandTS\Resources\Respondent;
+use EmploybrandTS\Api\Respondent;
 use Exception;
 use GuzzleHttp\Client;
 
 
-class EmploybrandTS
+class EmploybrandTSClient
 {
 
 
@@ -23,6 +23,8 @@ class EmploybrandTS
     private $url = 'https://api.talent-score.employbrand.app';
 
     private $respondent;
+
+    private $respondentFields;
 
 
     public function __construct(string $companyId, string $token)
@@ -42,13 +44,13 @@ class EmploybrandTS
     }
 
 
-    public function makeAPICall(string $url, string $method = 'GET', array $options = []): Response
+    public function makeAPICall(string $url, string $method = 'GET', array $options = []): \stdClass|array
     {
         if( !in_array($method, ['GET', 'POST', 'PUT', 'DELETE']) ) {
             throw new Exception('Invalid method type');
         }
 
-        $response = $this->guzzle->{$method}($url, $options);
+        $response = $this->guzzle->request($method, $url, $options);
 
         switch ( $response->getStatusCode() ) {
             case 401:
@@ -65,7 +67,7 @@ class EmploybrandTS
                 throw new PerformingMaintenance($response->getBody());
         }
 
-        return new Response($response);
+        return json_decode($response->getBody()->getContents(), true);
     }
 
 
@@ -74,6 +76,14 @@ class EmploybrandTS
         if( $this->respondent == null )
             $this->respondent = new Respondent($this);
         return $this->respondent;
+    }
+
+
+    public function respondentFields(): RespondentField
+    {
+        if( $this->respondentFields == null )
+            $this->respondentFields = new RespondentField($this);
+        return $this->respondentFields;
     }
 
 }
