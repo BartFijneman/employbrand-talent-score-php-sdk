@@ -72,7 +72,19 @@ class Respondent extends AbstractApi
      */
     public function update($id, array|object $data): RespondentEntity
     {
-        return new RespondentEntity($this->postRequest('respondents/' . $id, $data));
+        return new RespondentEntity($this->putRequest('respondents/' . $id, $data));
+    }
+
+
+    /**
+     * Delete a respondent
+     *
+     * @param $id
+     * @return RespondentEntity
+     */
+    public function delete($id): RespondentEntity
+    {
+        return new RespondentEntity($this->deleteRequest('respondents/' . $id));
     }
 
 
