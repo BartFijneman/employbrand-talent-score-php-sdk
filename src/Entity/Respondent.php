@@ -6,52 +6,52 @@ namespace EmploybrandTS\Entity;
 class Respondent extends AbstractEntity
 {
 
-    public int $id;
+    public ?int $id = null;
 
-    public string $firstName;
+    public ?string $firstName = null;
 
-    public ?string $lastName;
+    public ?string $lastName = null;
 
-    public ?string $phone;
+    public ?string $phone = null;
 
-    public string $email;
+    public ?string $email = null;
 
-    public bool $signedOff;
+    public bool $signedOff = false;
 
-    public bool $personalDataAllowed;
+    public bool $personalDataAllowed = false;
 
-    public string $type;
+    public ?string $type = null;
 
-    public int $environmentId;
+    public ?int $environmentId = null;
 
-    public ?string $candidateSince;
+    public ?string $candidateSince = null;
 
-    public ?string $candidateRejectedAt;
+    public ?string $candidateRejectedAt = null;
 
-    public ?string $candidateInterviewedAt;
+    public ?string $candidateInterviewedAt = null;
 
-    public ?string $candidateAcceptedAt;
+    public ?string $candidateAcceptedAt = null;
 
-    public ?string $employeeSince;
+    public ?string $employeeSince = null;
 
-    public ?string $employeeFunctionSince;
+    public ?string $employeeFunctionSince = null;
 
-    public ?string $formerEmployeeSince;
+    public ?string $formerEmployeeSince = null;
 
-    public ?string $personalDataAllowedAt;
+    public ?string $personalDataAllowedAt = null;
 
-    public ?string $signedOffAt;
+    public ?string $signedOffAt = null;
 
-    public bool $inactive;
+    public bool $inactive = false;
 
-    public ?string $inactiveSince;
+    public ?string $inactiveSince = null;
 
-    public ?string $expectedDeletionDate;
+    public ?string $expectedDeletionDate = null;
 
-    public string $updatedAt;
+    public ?string $updatedAt = null;
 
-    public string $createdAt;
+    public ?string $createdAt = null;
 
-    public array $data;
+    public array $data = [];
 
 }

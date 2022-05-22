@@ -13,7 +13,7 @@ abstract class AbstractEntity
     public function __construct($parameters = null)
     {
         if( null === $parameters ) {
-            return;
+            return $this;
         }
 
         if( \is_object($parameters) ) {
@@ -21,6 +21,8 @@ abstract class AbstractEntity
         }
 
         $this->build($parameters);
+
+        return $this;
     }
 
 

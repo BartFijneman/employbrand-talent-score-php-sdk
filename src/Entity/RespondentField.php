@@ -6,19 +6,19 @@ namespace EmploybrandTS\Entity;
 class RespondentField extends AbstractEntity
 {
 
-    public int $id;
+    public ?int $id = null;
 
-    public array $name;
+    public array $name = [];
 
-    public array $filterName;
+    public array $filterName = [];
 
-    public string $type;
+    public ?string $type = null;
 
-    public array $options;
+    public array $options = [];
 
-    public string $updatedAt;
+    public ?string $updatedAt = null;
 
-    public string $createdAt;
+    public ?string $createdAt = null;
 
 
     public function build(array $parameters): void

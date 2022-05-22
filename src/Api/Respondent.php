@@ -44,7 +44,7 @@ class Respondent extends AbstractApi
     {
         $response = $this->getRequest('respondents', ['email' => $email]);
 
-        if( count($response->data) === 0 )
+        if( count($response['data']) === 0 )
             throw new NotFound();
 
         return new RespondentEntity($response[ 'data' ][ 0 ]);

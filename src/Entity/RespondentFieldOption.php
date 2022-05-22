@@ -6,16 +6,16 @@ namespace EmploybrandTS\Entity;
 class RespondentFieldOption extends AbstractEntity
 {
 
-    public int $id;
+    public ?int $id = null;
 
-    public array $name;
+    public array $name = [];
 
-    public ?int $from;
+    public ?int $from = null;
 
-    public ?int $until;
+    public ?int $until = null;
 
-    public string $updatedAt;
+    public ?string $updatedAt = null;
 
-    public string $createdAt;
+    public ?string $createdAt = null;
 
 }
