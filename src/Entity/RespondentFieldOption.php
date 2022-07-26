@@ -14,6 +14,8 @@ class RespondentFieldOption extends AbstractEntity
 
     public ?int $until = null;
 
+    public array $options = [];
+
     public ?string $updatedAt = null;
 
     public ?string $createdAt = null;

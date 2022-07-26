@@ -1,7 +1,7 @@
 {
   "name": "employbrand/talent-score-php-sdk",
   "description": "Employbrand Talent Score PHP SDK",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "library",
   "autoload": {
     "psr-4": {
